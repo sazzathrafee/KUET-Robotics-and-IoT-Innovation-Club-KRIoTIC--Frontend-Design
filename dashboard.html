@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dashboard – KRIoTIC</title>
+  <link rel="stylesheet" href="home.css" />
+  <link rel="stylesheet" href="dashboard.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800&family=Rajdhani:wght@400;500;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+<body class="dash-body">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-logo">
+      <span class="logo-kr">KR</span><span class="logo-io">Io</span><span class="logo-tic">TIC</span>
+    </div>
+    <nav class="sidebar-nav">
+      <a href="#" class="sidebar-link active" onclick="showSection('overview')">
+        <i class="fas fa-home"></i> <span>Overview</span>
+      </a>
+      <a href="#" class="sidebar-link" onclick="showSection('members')">
+        <i class="fas fa-users"></i> <span>Members</span>
+      </a>
+      <a href="#" class="sidebar-link" onclick="showSection('events')">
+        <i class="fas fa-calendar"></i> <span>Events</span>
+      </a>
+      <a href="#" class="sidebar-link" onclick="showSection('projects')">
+        <i class="fas fa-code-branch"></i> <span>Projects</span>
+      </a>
+      <a href="#" class="sidebar-link" onclick="showSection('announcements')">
+        <i class="fas fa-bell"></i> <span>Announcements</span>
+      </a>
+    </nav>
+    <div class="sidebar-footer">
+      <a href="login.html" class="sidebar-link logout-link">
+        <i class="fas fa-sign-out-alt"></i> <span>Logout</span>
+      </a>
+    </div>
+  </aside>
+
+  <!-- MAIN -->
+  <main class="dash-main">
+    <!-- TOP BAR -->
+    <header class="dash-header">
+      <div class="dash-header-left">
+        <button class="sidebar-toggle" id="sidebarToggle"><i class="fas fa-bars"></i></button>
+        <h1 class="dash-title" id="pageTitle">Overview</h1>
+      </div>
+      <div class="dash-header-right">
+        <div class="dash-user">
+          <div class="dash-avatar"><i class="fas fa-user"></i></div>
+          <span>Member</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- ===== OVERVIEW ===== -->
+    <section class="dash-section active" id="section-overview">
+      <div class="dash-welcome">
+        <h2>Welcome back! 👋</h2>
+        <p>Here's what's happening in KRIoTIC today.</p>
+      </div>
+
+      <div class="dash-stats">
+        <div class="dash-stat-card">
+          <i class="fas fa-users"></i>
+          <div>
+            <h3>212</h3>
+            <p>Total Members</p>
+          </div>
+        </div>
+        <div class="dash-stat-card">
+          <i class="fas fa-calendar-check"></i>
+          <div>
+            <h3>3</h3>
+            <p>Upcoming Events</p>
+          </div>
+        </div>
+        <div class="dash-stat-card">
+          <i class="fas fa-code-branch"></i>
+          <div>
+            <h3>18</h3>
+            <p>Active Projects</p>
+          </div>
+        </div>
+        <div class="dash-stat-card">
+          <i class="fas fa-trophy"></i>
+          <div>
+            <h3>15</h3>
+            <p>Awards Won</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Recent activity -->
+      <div class="dash-grid2">
+        <div class="dash-card">
+          <h3 class="dash-card-title"><i class="fas fa-clock"></i> Recent Activity</h3>
+          <ul class="activity-list">
+            <li><span class="act-dot green"></span> IoT Workshop registration opened <small>2 hours ago</small></li>
+            <li><span class="act-dot blue"></span> New member joined: Sazzat Hossain <small>Yesterday</small></li>
+            <li><span class="act-dot yellow"></span> Robo War 2025 announcement posted <small>2 days ago</small></li>
+            <li><span class="act-dot blue"></span> Project "Smart Irrigation" updated <small>3 days ago</small></li>
+            <li><span class="act-dot green"></span> Arduino Bootcamp recap published <small>1 week ago</small></li>
+          </ul>
+        </div>
+        <div class="dash-card">
+          <h3 class="dash-card-title"><i class="fas fa-calendar-alt"></i> Upcoming Events</h3>
+          <div class="upcoming-list">
+            <div class="upcoming-item">
+              <div class="upcoming-date">
+                <span class="day">15</span>
+                <span class="mon">JUN</span>
+              </div>
+              <div class="upcoming-info">
+                <h4>IoT Workshop 2025</h4>
+                <p>KUET Campus</p>
+              </div>
+            </div>
+            <div class="upcoming-item">
+              <div class="upcoming-date">
+                <span class="day">05</span>
+                <span class="mon">JUL</span>
+              </div>
+              <div class="upcoming-info">
+                <h4>Robo War 2025</h4>
+                <p>KUET Auditorium</p>
+              </div>
+            </div>
+            <div class="upcoming-item">
+              <div class="upcoming-date">
+                <span class="day">20</span>
+                <span class="mon">AUG</span>
+              </div>
+              <div class="upcoming-info">
+                <h4>KRIoTIC Hackathon 2025</h4>
+                <p>Conference Hall</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== MEMBERS ===== -->
+    <section class="dash-section" id="section-members">
+      <div class="dash-welcome">
+        <h2>Club Members</h2>
+        <p>Active members of KRIoTIC</p>
+      </div>
+      <div class="dash-card" style="margin-top:0">
+        <div class="table-header">
+          <input type="text" placeholder="Search members..." id="memberSearch" oninput="filterMembers()" class="search-input"/>
+        </div>
+        <table class="dash-table">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Name</th>
+              <th>Department</th>
+              <th>Role</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody id="memberTable">
+            <tr><td>01</td><td>Adib Rahman</td><td>EEE</td><td>President</td><td><span class="badge-active">Active</span></td></tr>
+            <tr><td>02</td><td>Sazzat Hossain</td><td>CSE</td><td>Vice President</td><td><span class="badge-active">Active</span></td></tr>
+            <tr><td>03</td><td>Mahim Uddin</td><td>ME</td><td>General Secretary</td><td><span class="badge-active">Active</span></td></tr>
+            <tr><td>04</td><td>Tanvir Ahmed</td><td>ECE</td><td>Tech Lead</td><td><span class="badge-active">Active</span></td></tr>
+            <tr><td>05</td><td>Riya Islam</td><td>EEE</td><td>Member</td><td><span class="badge-active">Active</span></td></tr>
+            <tr><td>06</td><td>Farhan Kabir</td><td>CSE</td><td>Member</td><td><span class="badge-inactive">Inactive</span></td></tr>
+            <tr><td>07</td><td>Nadia Sultana</td><td>ME</td><td>Member</td><td><span class="badge-active">Active</span></td></tr>
+            <tr><td>08</td><td>Rasel Hossen</td><td>EEE</td><td>Member</td><td><span class="badge-active">Active</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ===== EVENTS ===== -->
+    <section class="dash-section" id="section-events">
+      <div class="dash-welcome">
+        <h2>Events Management</h2>
+        <p>Track all club events and their status</p>
+      </div>
+      <div class="dash-grid2" style="margin-top:0">
+        <div class="dash-card event-item-dash">
+          <div class="event-status upcoming-s">Upcoming</div>
+          <h4>IoT Workshop 2025</h4>
+          <p><i class="fas fa-calendar"></i> June 15, 2025</p>
+          <p><i class="fas fa-users"></i> 45 Registered</p>
+        </div>
+        <div class="dash-card event-item-dash">
+          <div class="event-status upcoming-s">Upcoming</div>
+          <h4>Robo War 2025</h4>
+          <p><i class="fas fa-calendar"></i> July 5, 2025</p>
+          <p><i class="fas fa-users"></i> 28 Registered</p>
+        </div>
+        <div class="dash-card event-item-dash">
+          <div class="event-status past-s">Completed</div>
+          <h4>Arduino Bootcamp</h4>
+          <p><i class="fas fa-calendar"></i> March 20, 2025</p>
+          <p><i class="fas fa-users"></i> 80 Attended</p>
+        </div>
+        <div class="dash-card event-item-dash">
+          <div class="event-status past-s">Completed</div>
+          <h4>Line Follower Challenge</h4>
+          <p><i class="fas fa-calendar"></i> February 10, 2025</p>
+          <p><i class="fas fa-users"></i> 60 Attended</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== PROJECTS ===== -->
+    <section class="dash-section" id="section-projects">
+      <div class="dash-welcome">
+        <h2>Active Projects</h2>
+        <p>Current research and development projects</p>
+      </div>
+      <div class="dash-grid3" style="margin-top:0">
+        <div class="dash-card proj-card">
+          <div class="proj-icon"><i class="fas fa-tint"></i></div>
+          <h4>Smart Irrigation System</h4>
+          <p>IoT-based automated irrigation using soil moisture sensors and ESP32.</p>
+          <div class="proj-progress">
+            <div class="progress-bar" style="width:75%"></div>
+          </div>
+          <small>75% Complete</small>
+        </div>
+        <div class="dash-card proj-card">
+          <div class="proj-icon"><i class="fas fa-car"></i></div>
+          <h4>Autonomous Car</h4>
+          <p>Self-driving mini car using Raspberry Pi and computer vision.</p>
+          <div class="proj-progress">
+            <div class="progress-bar" style="width:40%"></div>
+          </div>
+          <small>40% Complete</small>
+        </div>
+        <div class="dash-card proj-card">
+          <div class="proj-icon"><i class="fas fa-home"></i></div>
+          <h4>Smart Home Controller</h4>
+          <p>Centralized home automation dashboard with voice and app control.</p>
+          <div class="proj-progress">
+            <div class="progress-bar" style="width:60%"></div>
+          </div>
+          <small>60% Complete</small>
+        </div>
+        <div class="dash-card proj-card">
+          <div class="proj-icon"><i class="fas fa-heartbeat"></i></div>
+          <h4>Health Monitor Band</h4>
+          <p>Wearable IoT device to track pulse, SpO2, and temperature.</p>
+          <div class="proj-progress">
+            <div class="progress-bar" style="width:30%"></div>
+          </div>
+          <small>30% Complete</small>
+        </div>
+        <div class="dash-card proj-card">
+          <div class="proj-icon"><i class="fas fa-drone"></i></div>
+          <h4>Surveillance Drone</h4>
+          <p>GPS-guided quadcopter for aerial photography and surveillance.</p>
+          <div class="proj-progress">
+            <div class="progress-bar" style="width:55%"></div>
+          </div>
+          <small>55% Complete</small>
+        </div>
+        <div class="dash-card proj-card">
+          <div class="proj-icon"><i class="fas fa-eye"></i></div>
+          <h4>Face Recognition System</h4>
+          <p>AI-powered attendance and access control using facial recognition.</p>
+          <div class="proj-progress">
+            <div class="progress-bar" style="width:85%"></div>
+          </div>
+          <small>85% Complete</small>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== ANNOUNCEMENTS ===== -->
+    <section class="dash-section" id="section-announcements">
+      <div class="dash-welcome">
+        <h2>Announcements</h2>
+        <p>Latest news and updates from KRIoTIC</p>
+      </div>
+      <div class="announce-list" style="margin-top:0">
+        <div class="announce-card">
+          <div class="announce-icon new"><i class="fas fa-bullhorn"></i></div>
+          <div class="announce-content">
+            <div class="announce-top">
+              <h4>IoT Workshop 2025 – Registration Open</h4>
+              <span class="badge-new">New</span>
+            </div>
+            <p>Registration for the upcoming IoT Workshop is now open. Seats are limited. Register via the Events page.</p>
+            <small><i class="fas fa-clock"></i> Posted 2 hours ago</small>
+          </div>
+        </div>
+        <div class="announce-card">
+          <div class="announce-icon"><i class="fas fa-trophy"></i></div>
+          <div class="announce-content">
+            <div class="announce-top">
+              <h4>KRIoTIC wins Best Innovation Award!</h4>
+            </div>
+            <p>Our Smart Irrigation project won the Best Innovation Award at the KUET Inter-Club Tech Fest 2025.</p>
+            <small><i class="fas fa-clock"></i> Posted 3 days ago</small>
+          </div>
+        </div>
+        <div class="announce-card">
+          <div class="announce-icon"><i class="fas fa-calendar-plus"></i></div>
+          <div class="announce-content">
+            <div class="announce-top">
+              <h4>Robo War 2025 – Dates Announced</h4>
+            </div>
+            <p>Mark your calendars! Robo War 2025 will be held on July 5th at the KUET Auditorium. Team registration opens June 1st.</p>
+            <small><i class="fas fa-clock"></i> Posted 1 week ago</small>
+          </div>
+        </div>
+        <div class="announce-card">
+          <div class="announce-icon"><i class="fas fa-users-cog"></i></div>
+          <div class="announce-content">
+            <div class="announce-top">
+              <h4>New Executive Panel Elected</h4>
+            </div>
+            <p>KRIoTIC's new executive panel for 2025–26 has been elected. Congratulations to all new and returning members!</p>
+            <small><i class="fas fa-clock"></i> Posted 2 weeks ago</small>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="main.js"></script>
+  <script>
+    // Section navigation
+    function showSection(id) {
+      document.querySelectorAll('.dash-section').forEach(s => s.classList.remove('active'));
+      document.querySelectorAll('.sidebar-link').forEach(l => l.classList.remove('active'));
+      document.getElementById('section-' + id).classList.add('active');
+      document.getElementById('pageTitle').textContent = id.charAt(0).toUpperCase() + id.slice(1);
+      event.currentTarget.classList.add('active');
+      // Close sidebar on mobile
+      if (window.innerWidth < 768) document.getElementById('sidebar').classList.remove('open');
+    }
+
+    // Sidebar toggle
+    document.getElementById('sidebarToggle').addEventListener('click', () => {
+      document.getElementById('sidebar').classList.toggle('open');
+    });
+
+    // Member search
+    function filterMembers() {
+      const val = document.getElementById('memberSearch').value.toLowerCase();
+      document.querySelectorAll('#memberTable tr').forEach(row => {
+        row.style.display = row.textContent.toLowerCase().includes(val) ? '' : 'none';
+      });
+    }
+  </script>
+</body>
+</html>

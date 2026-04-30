@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Events – KRIoTIC</title>
+  <link rel="stylesheet" href="home.css" />
+  <link rel="stylesheet" href="about.css" />
+  <link rel="stylesheet" href="events.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800&family=Rajdhani:wght@400;500;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="nav-logo">
+      <span class="logo-kr">KR</span><span class="logo-io">Io</span><span class="logo-tic">TIC</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="home.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="events.html" class="active">Events</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="dashboard.html" class="nav-btn">Dashboard</a></li>
+    </ul>
+    <div class="hamburger" id="hamburger"><i class="fas fa-bars"></i></div>
+  </nav>
+
+  <!-- PAGE HEADER -->
+  <section class="page-header">
+    <div class="page-header-bg"></div>
+    <div class="page-header-content">
+      <p class="hero-tag"><i class="fas fa-calendar-alt"></i> What's Happening</p>
+      <h1 class="hero-title">Club <span class="highlight">Events</span></h1>
+      <p class="hero-desc">Workshops, hackathons, competitions and seminars — stay up to date with KRIoTIC activities.</p>
+    </div>
+  </section>
+
+  <!-- FILTER TABS -->
+  <section class="events-section">
+    <div class="filter-tabs">
+      <button class="filter-btn active" data-filter="all">All Events</button>
+      <button class="filter-btn" data-filter="upcoming">Upcoming</button>
+      <button class="filter-btn" data-filter="past">Past</button>
+      <button class="filter-btn" data-filter="workshop">Workshops</button>
+      <button class="filter-btn" data-filter="competition">Competitions</button>
+    </div>
+
+    <!-- EVENTS GRID -->
+    <div class="events-grid" id="eventsGrid">
+
+      <div class="event-card upcoming workshop">
+        <div class="event-badge upcoming-badge">Upcoming</div>
+        <div class="event-meta">
+          <span><i class="fas fa-calendar"></i> June 15, 2025</span>
+          <span><i class="fas fa-map-marker-alt"></i> KUET Campus</span>
+        </div>
+        <h3>IoT Workshop 2025</h3>
+        <p>Hands-on workshop covering ESP32, MQTT, and cloud integration for smart home systems.</p>
+        <div class="event-tags"><span>IoT</span><span>Workshop</span><span>ESP32</span></div>
+        <a href="#" class="btn-primary" style="margin-top:18px;display:inline-block;padding:10px 24px;font-size:0.9rem">Register Now</a>
+      </div>
+
+      <div class="event-card upcoming competition">
+        <div class="event-badge upcoming-badge">Upcoming</div>
+        <div class="event-meta">
+          <span><i class="fas fa-calendar"></i> July 5, 2025</span>
+          <span><i class="fas fa-map-marker-alt"></i> KUET Auditorium</span>
+        </div>
+        <h3>Robo War 2025</h3>
+        <p>Annual robot combat championship — build, program, and battle your robots in the arena.</p>
+        <div class="event-tags"><span>Robotics</span><span>Competition</span></div>
+        <a href="#" class="btn-primary" style="margin-top:18px;display:inline-block;padding:10px 24px;font-size:0.9rem">Register Now</a>
+      </div>
+
+      <div class="event-card past workshop">
+        <div class="event-badge past-badge">Completed</div>
+        <div class="event-meta">
+          <span><i class="fas fa-calendar"></i> March 20, 2025</span>
+          <span><i class="fas fa-map-marker-alt"></i> EEE Building, KUET</span>
+        </div>
+        <h3>Arduino Bootcamp</h3>
+        <p>A 2-day intensive bootcamp covering Arduino programming, sensor interfacing, and project building.</p>
+        <div class="event-tags"><span>Arduino</span><span>Workshop</span><span>Embedded</span></div>
+        <a href="#" class="btn-outline" style="margin-top:18px;display:inline-block;padding:10px 24px;font-size:0.9rem">View Gallery</a>
+      </div>
+
+      <div class="event-card past competition">
+        <div class="event-badge past-badge">Completed</div>
+        <div class="event-meta">
+          <span><i class="fas fa-calendar"></i> February 10, 2025</span>
+          <span><i class="fas fa-map-marker-alt"></i> KUET Ground</span>
+        </div>
+        <h3>Line Follower Challenge</h3>
+        <p>Inter-club line follower robot competition with teams from across KUET departments.</p>
+        <div class="event-tags"><span>Robotics</span><span>Competition</span></div>
+        <a href="#" class="btn-outline" style="margin-top:18px;display:inline-block;padding:10px 24px;font-size:0.9rem">View Gallery</a>
+      </div>
+
+      <div class="event-card past workshop">
+        <div class="event-badge past-badge">Completed</div>
+        <div class="event-meta">
+          <span><i class="fas fa-calendar"></i> January 8, 2025</span>
+          <span><i class="fas fa-map-marker-alt"></i> CSE Building, KUET</span>
+        </div>
+        <h3>ML & Computer Vision Session</h3>
+        <p>Introduction to machine learning fundamentals and hands-on computer vision projects using Python and OpenCV.</p>
+        <div class="event-tags"><span>AI</span><span>ML</span><span>Workshop</span></div>
+        <a href="#" class="btn-outline" style="margin-top:18px;display:inline-block;padding:10px 24px;font-size:0.9rem">View Gallery</a>
+      </div>
+
+      <div class="event-card upcoming workshop">
+        <div class="event-badge upcoming-badge">Upcoming</div>
+        <div class="event-meta">
+          <span><i class="fas fa-calendar"></i> August 20, 2025</span>
+          <span><i class="fas fa-map-marker-alt"></i> KUET Conference Hall</span>
+        </div>
+        <h3>KRIoTIC Hackathon 2025</h3>
+        <p>24-hour hackathon — ideate, prototype and present your innovative tech solution to a panel of judges.</p>
+        <div class="event-tags"><span>Hackathon</span><span>Innovation</span></div>
+        <a href="#" class="btn-primary" style="margin-top:18px;display:inline-block;padding:10px 24px;font-size:0.9rem">Register Now</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="nav-logo" style="margin-bottom:10px">
+          <span class="logo-kr">KR</span><span class="logo-io">Io</span><span class="logo-tic">TIC</span>
+        </div>
+        <p>KUET Robotics and IoT Innovation Club</p>
+      </div>
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="home.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-social">
+        <h4>Follow Us</h4>
+        <div class="social-icons">
+          <a href="https://www.facebook.com/KUET-Robotics-and-IoT-Innovation-Club-Kriotic-111492171175288" target="_blank"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#"><i class="fab fa-github"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 KRIoTIC – KUET Robotics and IoT Innovation Club. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+  <script>
+    // Filter logic
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const cards = document.querySelectorAll('.event-card');
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const filter = btn.dataset.filter;
+        cards.forEach(card => {
+          if (filter === 'all' || card.classList.contains(filter)) {
+            card.style.display = 'flex';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>

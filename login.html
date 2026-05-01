@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login – KRIoTIC</title>
+  <link rel="stylesheet" href="home.css" />
+  <link rel="stylesheet" href="dashboard.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800&family=Rajdhani:wght@400;500;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+<body class="auth-body">
+
+  <div class="auth-bg-grid"></div>
+
+  <div class="auth-card">
+    <div class="auth-logo">
+      <span class="logo-kr">KR</span><span class="logo-io">Io</span><span class="logo-tic">TIC</span>
+    </div>
+    <p class="auth-sub">Member Portal – Sign In</p>
+
+    <div class="form-group" style="margin-bottom:18px">
+      <label style="display:block;font-size:0.82rem;font-weight:600;color:var(--muted);letter-spacing:1px;margin-bottom:8px">Email / Student ID</label>
+      <input type="text" placeholder="e.g. 2001001@student.kuet.ac.bd" id="loginUser"
+        style="width:100%;background:var(--bg2);border:1px solid var(--border);border-radius:8px;padding:12px 16px;color:var(--text);font-family:var(--font-body);font-size:0.95rem;outline:none;transition:border-color 0.2s"/>
+    </div>
+
+    <div class="form-group" style="margin-bottom:24px">
+      <label style="display:block;font-size:0.82rem;font-weight:600;color:var(--muted);letter-spacing:1px;margin-bottom:8px">Password</label>
+      <div style="position:relative">
+        <input type="password" placeholder="••••••••" id="loginPass"
+          style="width:100%;background:var(--bg2);border:1px solid var(--border);border-radius:8px;padding:12px 48px 12px 16px;color:var(--text);font-family:var(--font-body);font-size:0.95rem;outline:none;transition:border-color 0.2s"/>
+        <i class="fas fa-eye" id="togglePass"
+          style="position:absolute;right:14px;top:50%;transform:translateY(-50%);color:var(--muted);cursor:pointer;font-size:0.9rem"></i>
+      </div>
+    </div>
+
+    <button class="btn-primary" style="width:100%;padding:14px;font-size:1rem;border:none;cursor:pointer;border-radius:8px;letter-spacing:1px" onclick="handleLogin()">
+      <i class="fas fa-sign-in-alt"></i> Sign In
+    </button>
+
+    <p id="login-error" style="display:none;color:#ff3b5c;margin-top:14px;text-align:center;font-size:0.88rem">
+      <i class="fas fa-exclamation-circle"></i> Invalid credentials. Please try again.
+    </p>
+
+    <p style="text-align:center;margin-top:22px;color:var(--muted);font-size:0.88rem">
+      Not a member yet? <a href="contact.html" style="color:var(--primary);text-decoration:none;font-weight:600">Contact us to join</a>
+    </p>
+
+    <p style="text-align:center;margin-top:10px">
+      <a href="home.html" style="color:var(--muted);text-decoration:none;font-size:0.85rem">
+        <i class="fas fa-arrow-left"></i> Back to Home
+      </a>
+    </p>
+  </div>
+
+  <script src="main.js"></script>
+  <script>
+    // Toggle password visibility
+    document.getElementById('togglePass').addEventListener('click', function () {
+      const passInput = document.getElementById('loginPass');
+      if (passInput.type === 'password') {
+        passInput.type = 'text';
+        this.classList.replace('fa-eye', 'fa-eye-slash');
+      } else {
+        passInput.type = 'password';
+        this.classList.replace('fa-eye-slash', 'fa-eye');
+      }
+    });
+
+    // Focus styles via JS
+    document.querySelectorAll('input').forEach(input => {
+      input.addEventListener('focus', () => input.style.borderColor = 'var(--primary)');
+      input.addEventListener('blur', () => input.style.borderColor = 'var(--border)');
+    });
+
+    function handleLogin() {
+      const user = document.getElementById('loginUser').value.trim();
+      const pass = document.getElementById('loginPass').value.trim();
+      if (!user || !pass) {
+        document.getElementById('login-error').style.display = 'block';
+        document.getElementById('login-error').innerText = '⚠ Please fill in both fields.';
+        return;
+      }
+      // Demo: any non-empty credentials go to dashboard
+      window.location.href = 'dashboard.html';
+    }
+  </script>
+</body>
+</html>

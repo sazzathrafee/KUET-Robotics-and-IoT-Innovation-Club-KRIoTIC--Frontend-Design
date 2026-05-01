@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact – KRIoTIC</title>
+  <link rel="stylesheet" href="home.css" />
+  <link rel="stylesheet" href="about.css" />
+  <link rel="stylesheet" href="contact.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800&family=Rajdhani:wght@400;500;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="nav-logo">
+      <span class="logo-kr">KR</span><span class="logo-io">Io</span><span class="logo-tic">TIC</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="home.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="events.html">Events</a></li>
+      <li><a href="contact.html" class="active">Contact</a></li>
+      <li><a href="dashboard.html" class="nav-btn">Dashboard</a></li>
+    </ul>
+    <div class="hamburger" id="hamburger"><i class="fas fa-bars"></i></div>
+  </nav>
+
+  <!-- PAGE HEADER -->
+  <section class="page-header">
+    <div class="page-header-bg"></div>
+    <div class="page-header-content">
+      <p class="hero-tag"><i class="fas fa-envelope"></i> Get In Touch</p>
+      <h1 class="hero-title">Contact <span class="highlight">Us</span></h1>
+      <p class="hero-desc">Have a question or want to join? We'd love to hear from you.</p>
+    </div>
+  </section>
+
+  <!-- CONTACT SECTION -->
+  <section class="contact-section">
+    <div class="contact-info">
+      <h2 class="section-title" style="text-align:left;margin-bottom:20px">Reach Out</h2>
+
+      <div class="info-item">
+        <div class="info-icon"><i class="fas fa-map-marker-alt"></i></div>
+        <div>
+          <h4>Location</h4>
+          <p>Khulna University of Engineering &amp; Technology (KUET), Khulna – 9203, Bangladesh</p>
+        </div>
+      </div>
+
+      <div class="info-item">
+        <div class="info-icon"><i class="fab fa-facebook-f"></i></div>
+        <div>
+          <h4>Facebook</h4>
+          <p><a href="https://www.facebook.com/KUET-Robotics-and-IoT-Innovation-Club-Kriotic-111492171175288" target="_blank">KRIoTIC Facebook Page</a></p>
+        </div>
+      </div>
+
+      <div class="info-item">
+        <div class="info-icon"><i class="fab fa-linkedin-in"></i></div>
+        <div>
+          <h4>LinkedIn</h4>
+          <p><a href="#">KRIoTIC on LinkedIn</a></p>
+        </div>
+      </div>
+
+      <div class="info-item">
+        <div class="info-icon"><i class="fas fa-clock"></i></div>
+        <div>
+          <h4>Club Hours</h4>
+          <p>Saturday – Thursday: 4:00 PM – 8:00 PM</p>
+        </div>
+      </div>
+
+      <div class="contact-social">
+        <a href="https://www.facebook.com/KUET-Robotics-and-IoT-Innovation-Club-Kriotic-111492171175288" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#"><i class="fab fa-github"></i></a>
+        <a href="#"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+
+    <!-- CONTACT FORM -->
+    <div class="contact-form-box">
+      <h2 class="section-title" style="text-align:left;margin-bottom:20px">Send a Message</h2>
+      <div class="form-group">
+        <label>Your Name</label>
+        <input type="text" placeholder="e.g. Adib Rahman" id="fname"/>
+      </div>
+      <div class="form-group">
+        <label>Email Address</label>
+        <input type="email" placeholder="you@example.com" id="femail"/>
+      </div>
+      <div class="form-group">
+        <label>Subject</label>
+        <input type="text" placeholder="e.g. Membership Inquiry" id="fsubject"/>
+      </div>
+      <div class="form-group">
+        <label>Message</label>
+        <textarea placeholder="Write your message here..." rows="5" id="fmessage"></textarea>
+      </div>
+      <button class="btn-primary" style="width:100%;padding:14px;font-size:1rem;border:none;cursor:pointer;border-radius:8px" onclick="handleSubmit()">
+        <i class="fas fa-paper-plane"></i> Send Message
+      </button>
+      <p id="form-success" style="display:none;color:var(--accent);margin-top:14px;text-align:center;font-size:0.95rem">
+        <i class="fas fa-check-circle"></i> Message sent successfully!
+      </p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="nav-logo" style="margin-bottom:10px">
+          <span class="logo-kr">KR</span><span class="logo-io">Io</span><span class="logo-tic">TIC</span>
+        </div>
+        <p>KUET Robotics and IoT Innovation Club</p>
+      </div>
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="home.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-social">
+        <h4>Follow Us</h4>
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#"><i class="fab fa-github"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 KRIoTIC – KUET Robotics and IoT Innovation Club. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+  <script>
+    function handleSubmit() {
+      const name = document.getElementById('fname').value.trim();
+      const email = document.getElementById('femail').value.trim();
+      const msg = document.getElementById('fmessage').value.trim();
+      if (!name || !email || !msg) {
+        alert('Please fill in all required fields.');
+        return;
+      }
+      document.getElementById('form-success').style.display = 'block';
+      document.getElementById('fname').value = '';
+      document.getElementById('femail').value = '';
+      document.getElementById('fsubject').value = '';
+      document.getElementById('fmessage').value = '';
+      setTimeout(() => { document.getElementById('form-success').style.display = 'none'; }, 4000);
+    }
+  </script>
+</body>
+</html>
